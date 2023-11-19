@@ -2,18 +2,16 @@ Offer code compatible with Pine Script version 5.
 
 Name the script example_script_name
 
-# Prevent line continuation errors
 Please ensure the code is structured with short, readable lines to avoid 'end of line without line continuation' errors.
 
-# Prevent let errors
 Ensure that all variables are declared and assigned following Pine Script's syntax rules. Avoid using unsupported keywords like 'let' for variable declarations.
 
 Please break down the script's logic into clear steps, with each step correctly declaring and assigning variables as needed.
 
 Include comments explaining each variable's purpose and how it is assigned a value.
 
-# Prevent local scope errors
 Please ensure that any plotting functions, such as plotshape, are used outside of any loops or local scope blocks to avoid scope errors.
 
-# Use corrrect parameter for box
+Ensure that all plotting functions, especially plotshape, are used in the global scope and not inside any loops, conditional statements, or user-defined functions to avoid scope errors.
+
 Ensure that when using box.new to draw boxes, the correct parameter for setting the box's background color is used. Note that box.new does not have a 'color' parameter; instead, use 'bgcolor' for background color.
