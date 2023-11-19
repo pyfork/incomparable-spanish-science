@@ -1,0 +1,38 @@
+Sub ResetFormatting()
+
+    Application.ScreenUpdating = False
+    Application.Calculation = xlCalculationManual
+
+    Dim cell As Range
+    Dim hasMergedCells As Boolean
+    hasMergedCells = False
+
+    ' Check for merged cells and highlight them in yellow
+    For Each cell In ActiveSheet.UsedRange
+        If cell.MergeCells Then
+            cell.MergeArea.Interior.Color = RGB(255, 255, 0) ' Yellow color
+            hasMergedCells = True
+        End If
+    Next cell
+
+    ' Unmerge cells only if there are merged cells
+    If hasMergedCells Then
+        ActiveSheet.Cells.UnMerge
+    End If
+
+    ' Existing formatting code
+    With ActiveSheet.Cells
+        .Font.Name = "Arial"
+        .Font.Size = 10
+        .Font.Color = RGB(0, 0, 0)
+        .VerticalAlignment = xlTop
+    End With
+
+    ActiveSheet.Columns.AutoFit
+    ActiveSheet.Columns("A:A").ColumnWidth = 4
+    Range("A1").Select
+
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+
+End Sub

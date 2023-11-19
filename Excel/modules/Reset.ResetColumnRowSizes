@@ -1,0 +1,25 @@
+Sub ResetColumnRowSizes()
+
+    Application.ScreenUpdating = False
+    Application.Calculation = xlCalculationManual
+
+    With ActiveSheet
+        ' Set default column width, row height, and alignment
+        With .Cells
+            .ColumnWidth = 10
+            .RowHeight = 13
+            .HorizontalAlignment = xlLeft
+            .VerticalAlignment = xlTop
+        End With
+
+        ' Set specific column width for Column A
+        .Columns("A:A").ColumnWidth = 4
+
+        ' Select cell A1
+        .Range("A1").Select
+    End With
+
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+
+End Sub
