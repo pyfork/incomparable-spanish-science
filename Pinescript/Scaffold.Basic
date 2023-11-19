@@ -8,7 +8,7 @@ Ensure code is structured with short, readable lines to avoid 'end of line witho
 
 Ensure all variables are declared and assigned following Pine Script's syntax rules. 
 
-Never unsupported keywords like 'let' for variable declarations.
+Never use unsupported keywords like 'let' for variable declarations.
 
 Never use functions in ways that they're not meant to be used. Be sure to use math.max instead of just max as per Pinescript API v5.
 
