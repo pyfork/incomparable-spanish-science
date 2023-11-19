@@ -1,17 +1,28 @@
-Offer code compatible with Pine Script version 5.
+Offer code compatible with Pine Script version 5 and adheres strictly to the API documentation.
 
-Name the script example_script_name
+# Code goes here
 
-Please ensure the code is structured with short, readable lines to avoid 'end of line without line continuation' errors.
+Name the script example_code_name
 
-Ensure that all variables are declared and assigned following Pine Script's syntax rules. Avoid using unsupported keywords like 'let' for variable declarations.
+Ensure code is structured with short, readable lines to avoid 'end of line without line continuation' errors.
 
-Please break down the script's logic into clear steps, with each step correctly declaring and assigning variables as needed.
+Ensure all variables are declared and assigned following Pine Script's syntax rules. 
 
-Include comments explaining each variable's purpose and how it is assigned a value.
+Never unsupported keywords like 'let' for variable declarations.
 
-Please ensure that any plotting functions, such as plotshape, are used outside of any loops or local scope blocks to avoid scope errors.
+Never use functions in ways that they're not meant to be used. Be sure to use math.max instead of just max as per Pinescript API v5.
 
-Ensure that all plotting functions, especially plotshape, are used in the global scope and not inside any loops, conditional statements, or user-defined functions to avoid scope errors.
+Break down the script's logic into clear steps, with each step correctly declaring and assigning variables as needed.
+
+Use plotshape as per docs here: https://www.tradingview.com/pine-script-reference/v5/#fun_plotshape, ie outside any local scope.
 
 Ensure that when using box.new to draw boxes, the correct parameter for setting the box's background color is used. Note that box.new does not have a 'color' parameter; instead, use 'bgcolor' for background color.
+
+For logic, apply the boolean approach used in the "hammer code" so as to avoid  issue where 'bool' is misused as a method keyword, causing an error. Never use 'bool' as method keyword.
+
+Reassignment operator should adhere to docs here: https://www.tradingview.com/pine-script-reference/v5/#op_:=
+
+Include checklist at the end to confirm:
+1. Math.max is used as per pinescript v5 documentation. yes no?
+2. Plotshape is never used in local scope. yes no?
+3. Boolean approach in "hammer code" is applied. yes no?
