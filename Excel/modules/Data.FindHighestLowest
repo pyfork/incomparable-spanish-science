@@ -1,0 +1,25 @@
+Sub FindHighestLowest()
+    Dim rng As Range
+    Dim cell As Range
+    Dim maxValue As Double
+    Dim minValue As Double
+
+    ' Set the range of cells to be analyzed (change this as needed)
+    Set rng = Selection
+
+    ' Initialize the minimum and maximum values
+    maxValue = Application.WorksheetFunction.Max(rng)
+    minValue = Application.WorksheetFunction.Min(rng)
+
+    ' Loop through each cell in the range
+    For Each cell In rng
+        If cell.Value = maxValue Then
+            cell.Offset(0, 1).Value = "highest"
+        ElseIf cell.Value = minValue Then
+            cell.Offset(0, 1).Value = "lowest"
+        Else
+            cell.Offset(0, 1).Value = ""
+        End If
+    Next cell
+End Sub
+
